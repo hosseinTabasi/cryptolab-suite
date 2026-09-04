@@ -1,0 +1,10 @@
+cryptolab-suite benchmarks (live measurements)
+EDUCATIONAL rows are textbook demos; SAFE rows use cryptography.
+
+Name                                  Label        Iters  Total s  ms/op  MiB/s  
+------------------------------------  -----------  -----  -------  -----  -------
+textbook RSA enc+dec (tiny n=3233)    EDUCATIONAL  500    0.0005   0.001  —      
+RSA-OAEP wrap 32-byte key (2048-bit)  SAFE         50     0.0188   0.377  —      
+AES-256-GCM enc+dec (1 MiB)           SAFE         40     0.0370   0.925  1080.67
+AES-256-GCM enc+dec (2 MiB)           SAFE         40     0.0775   1.937  1032.51
+AES-256-GCM enc+dec (4 MiB)           SAFE         40     0.1556   3.889  1028.47
