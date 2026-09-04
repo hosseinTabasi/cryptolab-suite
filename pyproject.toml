@@ -1,0 +1,64 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cryptolab-suite"
+version = "0.1.0"
+description = "Advanced cryptography lab suite: Shamir sharing, Merkle trees, X.509 toolkit, encrypted vault, streaming AES-GCM, toy handshake, benchmarks, and challenge lab — extending cryptolab-kit."
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Hossein Tabasi"},
+]
+requires-python = ">=3.11"
+keywords = [
+    "cryptography",
+    "shamir",
+    "merkle-tree",
+    "x509",
+    "vault",
+    "aes-gcm",
+    "educational",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Education",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Security :: Cryptography",
+    "Typing :: Typed",
+]
+dependencies = [
+    "cryptography>=42.0.0",
+    "argon2-cffi>=23.1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+]
+kit = [
+    "cryptolab-kit @ git+https://github.com/hosseinTabasi/cryptolab-kit.git",
+]
+
+[project.urls]
+Homepage = "https://github.com/hosseinTabasi/cryptolab-suite"
+Issues = "https://github.com/hosseinTabasi/cryptolab-suite/issues"
+Related = "https://github.com/hosseinTabasi/cryptolab-kit"
+
+[project.scripts]
+cryptolab-suite = "cryptolab_suite.cli:main"
+suite = "cryptolab_suite.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-q"
